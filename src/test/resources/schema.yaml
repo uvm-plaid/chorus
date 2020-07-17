@@ -1,0 +1,60 @@
+---
+databases:
+- database: "test"
+  dialect: "hive"
+  namespace: "public"
+  tables:
+  - table: "orders"
+    approxRowCount: 1000000
+    columns:
+    - name: "order_id"
+      maxFreq: 1
+    - name: "order_date"
+      canRelease: true
+    - name: "customer_id"
+      maxFreq: 100
+    - name: "product_id"
+      maxFreq: 500
+      canRelease: true
+      domainSet: "products.product_id"
+    - name: "quantity"
+    - name: "order_cost"
+  - table: "products"
+    isPublic: true
+    columns:
+    - name: "product_id"
+      maxFreq: 300
+    - name: "name"
+    - name: "price"
+  - table: "customers"
+    columns:
+    - name: "customer_id"
+      maxFreq: 1
+    - name: "name"
+      isTainted: true
+    - name: "address"
+      isTainted: true
+      maxFreq: 5
+  - table: "recommendations"
+    columns:
+    - name: "customer_id"
+      maxFreq: 250
+    - name: "product_id"
+      maxFreq: 2000
+
+- database: "test2"
+  dialect: "hive"
+  namespace: ""
+  tables:
+  - table: "my_table"
+    columns:
+    - name: "my_col"
+    - name: "structured_col"
+      fields:
+      - name: "field1"
+      - name: "field2"
+        fields:
+        - name: "subfield1"
+  - table: "subschema.tbl"
+    columns:
+    - name: "col"

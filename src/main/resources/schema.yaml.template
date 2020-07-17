@@ -1,0 +1,11 @@
+---
+databases:
+- database: "my_database"
+  dialect: "postgres"
+  namespace: "public"
+  tables:
+  - table: "my_table"
+    columns:
+    - name: "col1"
+    - name: "col2"
+
