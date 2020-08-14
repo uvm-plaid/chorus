@@ -48,8 +48,8 @@ class AverageMechClipping(epsilon: Double, l: Double, u: Double,
     val sumQuery = replaceAgg(root, "sum")
     val countQuery = replaceAgg(root, "count")
 
-    val (r1, c1) = new LaplaceMechClipping(epsilon/2.0, 0, 10, sumQuery, config).run()
-    val (r2, c2) = new LaplaceMechClipping(epsilon/2.0, 0, 10, countQuery, config).run()
+    val (r1, c1) = new LaplaceMechClipping(epsilon/2.0, l, u, sumQuery, config).run()
+    val (r2, c2) = new LaplaceMechClipping(epsilon/2.0, l, u, countQuery, config).run()
 
     val results = (r1 zip r2).map {
       case (DB.Row(vs1), DB.Row(vs2)) => DB.Row((vs1 zip vs2).map {
