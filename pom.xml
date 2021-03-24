@@ -24,14 +24,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.uber.engsec</groupId>
-    <artifactId>sql-differential-privacy</artifactId>
+    <groupId>uvm-plaid</groupId>
+    <artifactId>chorus</artifactId>
     <version>0.1.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>sql-differential-privacy</name>
+    <name>chorus</name>
     <description>Differential privacy for SQL queries</description>
-    <url>https://github.com/uber/sql-differential-privacy</url>
+    <url>https://github.com/uvm-plaid/chorus</url>
 
     <licenses>
         <license>
@@ -40,13 +40,6 @@
         </license>
     </licenses>
 
-    <scm>
-        <connection>scm:git:git@github.com:uber/sql-differential-privacy.git</connection>
-        <developerConnection>scm:git:git@github.com:uber/sql-differential-privacy.git</developerConnection>
-        <url>git@github.com:uber/sql-differential-privacy.git</url>
-        <tag>HEAD</tag>
-    </scm>
-
     <developers>
         <developer>
             <name>Noah Johnson</name>
@@ -54,7 +47,7 @@
         </developer>
         <developer>
             <name>Joe Near</name>
-            <email>jnear@berkeley.edu</email>
+            <email>jnear@uvm.edu</email>
         </developer>
     </developers>
 
