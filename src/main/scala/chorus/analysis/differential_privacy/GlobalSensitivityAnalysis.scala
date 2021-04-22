@@ -106,6 +106,19 @@ class GlobalSensitivityAnalysis extends RelNodeColumnAnalysis(StabilityDomain, S
   override def transferExpression(node: RexNode, state: ColSensitivity): ColSensitivity = {
     node match {
       case c: RexCall =>
+        val isAllowedExpression =
+          List(
+            SqlKind.CASE,
+            SqlKind.EQUALS,
+            SqlKind.CAST,
+            SqlKind.GREATER_THAN, SqlKind.GREATER_THAN_OR_EQUAL,
+            SqlKind.LESS_THAN, SqlKind.LESS_THAN_OR_EQUAL
+          )
+
+        if (!isAllowedExpression.contains(c.getOperator.getKind))
+          throw new UnsupportedConstructException("Unsupported operator: " + c)
+
+
         c.getOperator.getKind match {
           case SqlKind.CASE => {
             val operands = c.getOperands.asScala
