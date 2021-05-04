@@ -1,14 +1,15 @@
 # Overview
 
 This repository contains the updated implementation of the Chorus
-system for differential privacy, to accompany the following paper:
+system (version 0.1.3) for differential privacy, to accompany the
+following paper:
 
 - [**CHORUS: a Programming Framework for Building Scalable Differential
 Privacy Mechanisms.**](https://conferences.computer.org/eurosp/pdfs/EuroSP2020-2psedXWK6U4prXdo7t91Gm/508700a535/508700a535.pdf) Noah Johnson, Joseph P. Near, Joseph
 M. Hellerstein, Dawn Song. *EuroS&P 2020*.
 
-This is an updated release of Chorus.  The original release of Chorus
-is available
+This is an updated release of Chorus (version 0.1.3). The original
+release of Chorus is available
 [here](https://github.com/uber-archive/sql-differential-privacy); see
 the original repository and the paper for more documentation.
 
