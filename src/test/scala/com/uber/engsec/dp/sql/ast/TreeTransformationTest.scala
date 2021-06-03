@@ -45,7 +45,7 @@ class TreeTransformationTest extends TestCase {
     System.out.println("Query: " + queryStr)
     Transformer.schemaMode = schemaMode
     val root = QueryParser.parseToDataflowGraph(queryStr, database)
-    TestCase.assertEquals(treeStructure.trim().replaceAll("\n      ", "\n"), CompactTreePrinter.printTree(root))
+    TestCase.assertEquals(treeStructure.trim().replaceAll("\r", "").replaceAll("\n      ", "\n"), CompactTreePrinter.printTree(root))
     println("Test passed!\n")
   }
 

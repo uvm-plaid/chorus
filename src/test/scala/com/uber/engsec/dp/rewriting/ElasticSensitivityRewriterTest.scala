@@ -34,7 +34,7 @@ class ElasticSensitivityRewriterTest extends TestCase {
     val root = QueryParser.parseToRelTree(query, database)
     val config = new ElasticSensitivityConfig(epsilon, delta, database, fillMissingBins)
     val result = new ElasticSensitivityRewriter(config).run(root)
-    TestCase.assertEquals(expected.stripMargin.stripPrefix("\n"), result.toSql())
+    TestCase.assertEquals(expected.stripMargin.stripPrefix("\n").replaceAll("\r", ""), result.toSql())
   }
 
   def testUnsupportedQueries() = {

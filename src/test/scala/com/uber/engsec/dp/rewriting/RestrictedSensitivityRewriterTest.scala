@@ -34,7 +34,7 @@ class RestrictedSensitivityRewriterTest extends TestCase {
     val root = QueryParser.parseToRelTree(query, database)
     val config = new RestrictedSensitivityConfig(epsilon, database, fillMissingBins)
     val result = new RestrictedSensitivityRewriter(config).run(root)
-    TestCase.assertEquals(expected.stripMargin.stripPrefix("\n"), result.toSql())
+    TestCase.assertEquals(expected.stripMargin.stripPrefix("\n").replaceAll("\r", ""), result.toSql())
   }
 
   def testSimpleHistogram() {
