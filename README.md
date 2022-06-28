@@ -30,6 +30,27 @@ from the paper. To run the examples, after building Chorus:
 mvn exec:java -Dexec.mainClass="examples.MechanismExamples"
 ```
 
+## Potential Security Issues
+
+This repo contains a proof-of-concept implementation resulting from a
+research project; we did not attempt to mitigate issues resulting from
+floating-point arithmetic or side channels. In particular, the
+following known attacks might be possible, depending on the deployment
+scenario and DBMS you use:
+
+- [On significance of the least significant bits for differential
+  privacy](https://dl.acm.org/doi/pdf/10.1145/2382196.2382264). Ilya
+  Mironov, CCS 2012.
+- [Widespread Underestimation of Sensitivity in Differentially Private
+  Libraries and How to Fix It](tba). Casacuberta et al., Unpublished
+  manuscript, June 2022.
+- [Side-Channel Attacks on Query-Based Data
+  Anonymization](https://dl.acm.org/doi/pdf/10.1145/3460120.3484751).
+  Boenisch et al., CCS 2021.
+
+Please don't use this code in production without considering these
+issues first.
+
 ## License
 
 This project is released under the MIT License.
