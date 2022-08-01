@@ -42,8 +42,8 @@ scenario and DBMS you use:
   privacy](https://dl.acm.org/doi/pdf/10.1145/2382196.2382264). Ilya
   Mironov, CCS 2012.
 - [Widespread Underestimation of Sensitivity in Differentially Private
-  Libraries and How to Fix It](tba). Casacuberta et al., Unpublished
-  manuscript, June 2022.
+  Libraries and How to Fix It](https://arxiv.org/abs/2207.10635).
+  Casacuberta et al., preprint, July 2022.
 - [Side-Channel Attacks on Query-Based Data
   Anonymization](https://dl.acm.org/doi/pdf/10.1145/3460120.3484751).
   Boenisch et al., CCS 2021.
